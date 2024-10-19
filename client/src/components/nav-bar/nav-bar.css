@@ -1,0 +1,90 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: var(--text-light);
+}
+
+.navbar-home {
+  flex: 1;
+}
+
+.navbar a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.navbar a:hover {
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.navbar a.active {
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.navbar-regions-mobile {
+  display: none;
+  overflow: hidden;
+}
+
+.navbar-regions-mobile-button {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.navbar-regions-mobile-content {
+  position: absolute;
+  right: 0;
+  left: inherit;
+  top: 58px;
+  background-color: var(--text-light);
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar-regions-mobile-content > a {
+  color: var(--text-dark);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar-regions-mobile-content > a:hover {
+  background-color: var(--color-primary);
+  color: var(--text-light);
+}
+
+.navbar-regions-mobile:hover .navbar-regions-mobile-content {
+  display: block;
+}
+
+.navbar-regions {
+  display: flex;
+  flex: 4;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: var(--text-light);
+}
+
+@media screen and (max-width: 750px) {
+  .navbar-regions {
+    display: none;
+  }
+
+  .navbar-regions-mobile {
+    display: block;
+  }
+}

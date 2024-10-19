@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <div class="navbar-home">
+    <a load="/">Home</a>
+  </div>
+  <div class="navbar-regions">
+    <div repeat.for="region of regions; key: slug">
+      <a load="/region/${region.slug}">${region.name}</a>
+    </div>
+  </div>
+  <div class="navbar-regions-mobile">
+    <button
+      class="navbar-regions-mobile-button"
+      click.trigger="toggleShowRegions"
+    >
+      Regions
+    </button>
+    <div class="navbar-regions-mobile-content" style.bind="showRegionsDisplay">
+      <a
+        repeat.for="region of regions; key: slug"
+        load="/region/${region.slug}"
+        click.trigger="setShowRegions('none')"
+      >
+        ${region.name}
+      </a>
+    </div>
+  </div>
+</nav>

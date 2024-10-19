@@ -1,0 +1,31 @@
+<import from="./components/region-fish-card"></import>
+<import from="../../components/nav-bar/nav-bar"></import>
+
+<template>
+  <nav-bar regions.bind="regions"></nav-bar>
+  <section class="region-display">
+    <h1 id="title">Region: ${region.name}</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>average calories per serving</th>
+          <th>average grams of fat per serving</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>${region.averageCalories.toFixed(1)} cal</td>
+          <td>${region.averageFat.toFixed(1)} g</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Fish Available:</h2>
+    <section id="fish-list">
+      <region-fish-card
+        repeat.for="fish of region.availableFish; key: name"
+        fish.bind="fish"
+      ></region-fish-card>
+    </section>
+  </section>
+</template>

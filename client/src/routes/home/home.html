@@ -1,0 +1,20 @@
+<import from="../../components/nav-bar/nav-bar"></import>
+<import from="./components/region-card"></import>
+
+<div>
+  <nav-bar regions.bind="regions"></nav-bar>
+  <section
+    style="
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 24px;
+      justify-content: center;
+    "
+  >
+    <region-card
+      repeat.for="region of regions; key: slug"
+      region.bind="region"
+    ></region-card>
+  </section>
+</div>

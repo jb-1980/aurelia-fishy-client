@@ -1,0 +1,13 @@
+<template class="fish-card">
+  <img src="${fish.imgSrc}" alt="${fish.name}" />
+  <h3>${fish.name}</h3>
+  <p innerhtml.bind="fish.description"></p>
+  <p>
+    <span style="font-weight: 600"> ${fish.caloriesPerServing} calories </span
+    >per serving
+  </p>
+  <p>
+    <span style="font-weight: 600">${fish.fatPerServing} grams</span> of fat per
+    serving
+  </p>
+</template>
